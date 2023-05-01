@@ -1,0 +1,429 @@
+
+package javafx2;
+
+
+
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
+import javafx.event.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+public class JavaFX2 extends Application {
+    
+
+boolean test=false;
+public void start(Stage primaryStage) {
+        
+primaryStage.setTitle("WELCOME");
+
+Label label1= new Label("Who is the father \nof Indian Constitution?");
+
+Label label2= new Label("Hitler party which came into\n power in 1933 is known as ?");
+Label label3= new Label("IDENTIFY NATIONAL BIRD OF ");
+Label label4= new Label("Manchester ofIndia ?");
+Label label5= new Label("INDIA?");
+Label labelresponse= new Label();
+label1.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 35));
+label2.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
+label3.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
+label4.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
+label5.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
+
+Button button0= new Button("TAKE QUIZ");
+button0.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR,30));
+Button button= new Button("NEXT");
+Button button2= new Button("PREV");
+Button button3= new Button("NEXT");
+Button button4= new Button("PREV");
+Button button5= new Button("NEXT");
+Button button6= new Button("PREV");
+Button button7= new Button("NEXT");
+Button button8= new Button("PREV");
+Button button9= new Button("SUBMIT");
+button.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+button2.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+button3.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+button4.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+button5.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+button6.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+button7.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+button8.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+button9.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+RadioButton  radio1, radio2, radio3, radio4;
+radio1=new RadioButton("Dr. B.R. AMBEDKAR");
+radio2= new RadioButton("SARVEPALLI RADHAKRISHNA");
+radio3= new RadioButton("VALLABHBHAI PATEL");
+radio4= new RadioButton("JAWAHARLAL NEHRU");
+RadioButton radio5=new RadioButton("Labour Party");
+RadioButton radio6= new RadioButton("Nazi Party");
+RadioButton radio7= new RadioButton("Ku-Klux-Klan");
+RadioButton radio8= new RadioButton("Democratic Party");
+
+ToggleGroup question1= new ToggleGroup();
+ToggleGroup question2= new ToggleGroup();
+radio1.setToggleGroup(question1);
+radio2.setToggleGroup(question1);
+radio3.setToggleGroup(question1);
+radio4.setToggleGroup(question1);
+radio5.setToggleGroup(question2);
+radio6.setToggleGroup(question2);
+radio7.setToggleGroup(question2);
+radio8.setToggleGroup(question2);
+radio1.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 15));
+radio2.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 15));
+radio3.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 15));
+radio4.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 15));
+radio5.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+radio6.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+radio7.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+radio8.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+radio1.setSelected(true);
+radio5.setSelected(true);
+radio1.setOnAction(e -> button.setDisable(false) );
+radio2.setOnAction(e -> button.setDisable(false) );
+radio3.setOnAction(e -> button.setDisable(false) );
+radio4.setOnAction(e -> button.setDisable(false) );
+
+GridPane layout1= new GridPane();
+layout1.setMinSize(400, 200);
+  
+      layout1.setPadding(new Insets(10, 10, 10, 10)); 
+      
+     
+      layout1.setVgap(30); 
+      layout1.setHgap(30);
+layout1.setAlignment(Pos.CENTER);
+layout1.add(label1, 0, 0); 
+     layout1.add(radio1, 0, 2); 
+      layout1.add(radio2, 1, 2);       
+      layout1.add(radio3, 0, 3); 
+      layout1.add(radio4, 1, 3); 
+      layout1.add(button, 1, 6);
+      Scene scene1= new Scene(layout1, 800, 500);
+
+
+
+
+
+radio5.setOnAction(e -> button.setDisable(false) );
+radio6.setOnAction(e -> button.setDisable(false) );
+radio7.setOnAction(e -> button.setDisable(false) );
+radio8.setOnAction(e -> button.setDisable(false) );
+button2.setLayoutX(100);
+GridPane layout2= new GridPane();
+layout2.setMinSize(400, 200); 
+      layout2.setPadding(new Insets(10, 10, 10, 10)); 
+   
+      layout2.setVgap(20); 
+      layout2.setHgap(20);
+layout2.setAlignment(Pos.CENTER);
+layout2.add(label2, 0, 0);
+     layout2.add(radio5, 0, 2); 
+      layout2.add(radio6, 1, 2);       
+      layout2.add(radio7, 0, 3); 
+      layout2.add(radio8, 1, 3); 
+      layout2.add(button2, 0, 6);
+      layout2.add(button3, 1, 6);
+  
+        
+Scene scene2= new Scene(layout2, 800, 500);
+ImageView im1 = new ImageView("file:///C:\\Users\\KHUSHI TALESRA\\Pictures\\dove.png");
+im1.setFitWidth(200);
+im1.setFitHeight(150);
+ im1.setPreserveRatio(true);
+   ImageView im2 = new ImageView("file:///C:\\Users\\KHUSHI TALESRA\\Pictures\\tiger.png");
+im2.setFitWidth(200);
+        im2.setFitHeight(150);
+ im2.setPreserveRatio(true);
+ ImageView im3 = new ImageView("file:///C:\\Users\\KHUSHI TALESRA\\Pictures\\peacock.png");
+im3.setFitWidth(200);
+im3.setFitHeight(150);
+ im3.setPreserveRatio(true);
+ ImageView im4 = new ImageView("file:///C:\\Users\\KHUSHI TALESRA\\Pictures\\redbird.png");
+im4.setFitWidth(200);
+im4.setFitHeight(150);
+ im4.setPreserveRatio(true);
+ 
+  Button opt1 = new Button("",im1); 
+  Button opt2 = new Button("",im2); 
+  Button opt3 = new Button("",im3); 
+  Button opt4 = new Button("",im4); 
+GridPane layout3= new GridPane();
+layout3.setMinSize(400, 200);
+      layout3.setPadding(new Insets(10, 10, 10, 10));  
+      layout3.setVgap(10); 
+      layout3.setHgap(10);
+layout3.setAlignment(Pos.CENTER);
+layout3.add(label3, 0, 0); 
+layout3.add(label5, 1, 0); 
+     layout3.add(opt1, 0, 1); 
+    layout3.add(opt2, 1, 1);       
+      layout3.add(opt3, 0, 4); 
+    layout3.add(opt4, 1, 4); 
+    layout3.add(button4, 0, 5); 
+    layout3.add(button5, 1, 5); 
+Scene scene3= new Scene(layout3, 800, 500);
+ImageView im5 = new ImageView("file:///C:\\Users\\KHUSHI TALESRA\\Pictures\\multiple.png");
+im5.setFitWidth(600);
+im5.setFitHeight(500);
+ im5.setPreserveRatio(true);
+ RadioButton a= new RadioButton("(A)");
+  RadioButton b= new RadioButton("(B)");
+   RadioButton c= new RadioButton("(C)");
+    RadioButton d= new RadioButton("(D)");
+ 
+GridPane layout4= new GridPane();
+layout4.setMinSize(400, 200);
+layout4.setAlignment(Pos.CENTER);
+  
+      layout4.setPadding(new Insets(10, 10, 10, 10));
+      layout4.setVgap(20); 
+      layout4.setHgap(20);
+       layout4.add(a, 0, 1); 
+    layout4.add(b, 1, 1);       
+      layout4.add(c, 0, 3); 
+    layout4.add(d, 1, 3); 
+  layout4.add(button6, 0, 4); 
+    layout4.add(button7, 1, 4); 
+layout4.add(im5, 0, 0); 
+Scene scene4= new Scene(layout4, 800, 500);
+
+ImageView im6 = new ImageView("file:///C:\\Users\\KHUSHI TALESRA\\Pictures\\integer.png");
+im6.setFitWidth(600);
+im6.setFitHeight(500);
+ im6.setPreserveRatio(true);
+TextField tx=new TextField();
+tx.setPromptText("THIS IS MANDATORY QUESTION ENTER VALID INTEGER");
+GridPane layout5= new GridPane();
+layout5.setMinSize(400, 200);
+  
+      layout5.setPadding(new Insets(10, 10, 10, 10));
+      layout5.setVgap(20); 
+      layout5.setHgap(20);
+       layout5.add(im6, 0, 1); 
+    layout5.add(tx, 0, 2);  
+    tx.setFont((Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20)));
+      layout5.add(button8, 0, 3); 
+    layout5.add(button9, 1, 3); 
+  layout5.setAlignment(Pos.CENTER);
+Scene scene5= new Scene(layout5, 800, 500);
+
+Button Button10=new Button("RETURN");
+Button Button11=new Button("CONFIRM");
+Button10.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+Button11.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+Label lb= new Label("      DO YOU WANT TO SUBMIT?");
+Label sc= new Label("");
+lb.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 30));
+sc.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 40));
+GridPane layout6= new GridPane();
+layout6.setMinSize(400, 200);
+  
+      layout6.setPadding(new Insets(10, 10, 10, 10));
+      layout6.setVgap(30); 
+      layout6.setHgap(30);
+      layout6.add(lb, 0, 1);
+      layout6.add(Button10, 0, 5);
+      layout6.add(Button11, 1, 5);
+      layout6.setAlignment(Pos.CENTER);
+      Scene scene6= new Scene(layout6, 800, 500);
+      GridPane layout7= new GridPane();
+layout7.setMinSize(400, 200);
+  Label sub=new Label("SUCCESFULLY SUBMITED");
+  Label scrlLabel = new Label("THE ANSWER KEY\n\n"+"QUESTION 1\n"+"A\n\n"+"QUESTION 2\n"+"B\n\n"+"QUESTION 3\n"+"C\n\n"+"QUESTION 4\n\n"+"A   C   D\n\n"+"QUESTION 5\n\n"+"3\n");
+   ScrollPane  scrlPane = new ScrollPane(scrlLabel);
+   scrlLabel.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR,20));
+   sub.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 40));
+   scrlPane.setPrefViewportWidth(130);
+   
+   Button Button12=new Button("EXIT");
+   Button12.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR,20));
+scrlPane.setPrefViewportHeight(200);
+scrlPane.setPannable(true);
+layout7.setAlignment(Pos.CENTER);
+  layout7.setPadding(new Insets(10, 10, 10, 10));
+      layout7.setVgap(20); 
+      layout7.setHgap(20);
+      layout7.add(sub, 0, 1);
+      layout7.add(sc, 0, 2); 
+      layout7.add(Button12, 1, 4);
+      layout7.add(scrlPane, 0, 3);
+      Scene scene7= new Scene(layout7, 800, 500);
+      
+ opt1.setOnAction(e -> 
+{
+
+  test=false;      
+} 
+);
+opt2.setOnAction(e -> 
+{
+
+  test=false;      
+} 
+);
+opt3.setOnAction(e -> 
+{
+
+  test=true;      
+} 
+);
+opt4.setOnAction(e -> 
+{
+
+  test=false;      
+} 
+);
+button0.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 1");
+  primaryStage.setScene(scene1);     
+}
+);
+button.setOnAction(e -> 
+{
+   primaryStage.setTitle("QUESTION 2");
+  primaryStage.setScene(scene2);         
+} 
+);
+
+button2.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 1");
+  primaryStage.setScene(scene1);     
+}
+);
+button3.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 3");
+  primaryStage.setScene(scene3);     
+}
+);
+button4.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 2");
+  primaryStage.setScene(scene2);     
+}
+);
+button5.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 4");
+  primaryStage.setScene(scene4);     
+}
+);
+button6.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 3");
+  primaryStage.setScene(scene3);     
+}
+);
+button7.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 5");
+  primaryStage.setScene(scene5);     
+}
+);
+button8.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 4");
+  primaryStage.setScene(scene4);     
+}
+);
+button9.setOnAction(e -> 
+{
+       primaryStage.setTitle("CONFIRMATION");
+  primaryStage.setScene(scene6);     
+}
+);
+Button10.setOnAction(e -> 
+{primaryStage.setTitle("QUESTION 5");
+  primaryStage.setScene(scene5);     
+}
+);
+
+
+Button11.setOnAction((ActionEvent ae) -> {
+    
+    Pattern pat =Pattern.compile(tx.getText());
+    Matcher mat;
+    int marks=0;
+    
+    
+
+    mat=pat.matcher("3");
+
+    
+    
+    try{
+    int k=Integer.parseInt(tx.getText());
+    
+    if(radio1.isSelected())
+    { marks+=5;}
+    
+    if(radio6.isSelected())
+        marks+=5;
+    if(test)
+        marks+=10;
+    if(a.isSelected())
+        if(d.isSelected())
+            if(c.isSelected())
+                if(!b.isSelected())
+                    marks=marks+15;
+    if(mat.matches())
+        marks=marks+15;
+
+    
+   
+    sc.setText("MARKS SCORED\n"+marks+"/50 ");
+    
+    primaryStage.setScene(scene7);
+}
+     catch(Exception e)
+    {primaryStage.setScene(scene5);
+    }
+});
+Button12.setOnAction(e -> 
+{
+   Platform.exit();     
+}
+);
+ImageView im0 = new ImageView("file:///C:\\Users\\KHUSHI TALESRA\\Pictures\\Saved Pictures\\logo.JPG");
+im1.setFitWidth(500);
+ im2.setPreserveRatio(true);
+Label label0= new Label("QUIZ PORTAL");
+Label label11=new Label("Max. Marks: 50");
+label0.setId("fancytext");
+label0.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR,70));
+label11.setId("fancytext");
+label11.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR,20));
+GridPane layout0= new GridPane();
+layout0.setMinSize(400, 200);
+      layout0.setPadding(new Insets(10, 10, 10, 10));
+      layout0.setVgap(20); 
+      layout0.setHgap(20);
+       layout0.add(im0, 0, 1);
+       layout0.add(label0, 1, 1);
+       layout0.add(label11, 1, 3);
+       layout0.add(button0, 1, 5);
+       Scene scene0= new Scene(layout0, 800, 500);
+primaryStage.setScene(scene0);
+  
+primaryStage.show();
+}  
+public static void main(String[] args) {
+launch(args);
+}
+    
+}
+
